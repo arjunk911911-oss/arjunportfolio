@@ -1,0 +1,764 @@
+/* =========================================================
+   CUTFRAME STUDIO
+   Main stylesheet
+========================================================= */
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0b0c0d;
+    color: #f3f1ec;
+    font-family: Arial, sans-serif;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: auto;
+    padding: 32px;
+}
+
+.muted {
+    color: #9b9a96;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    font-weight: 1000;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 78vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: end;
+    padding: 80px 0;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    color: #a7ff3f;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 9vw, 132px);
+    line-height: 0.9;
+    margin: 16px 0 24px;
+    letter-spacing: -0.06em;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 650px;
+    color: #b9b7b1;
+    line-height: 1.5;
+}
+
+.portrait {
+    width: 100%;
+    max-height: 640px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 2px;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border: 1px solid #333;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.cta:hover {
+    background: #a7ff3f;
+    color: #0b0c0d;
+    border-color: #a7ff3f;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 0;
+    border-top: 1px solid #252525;
+}
+
+.section h2 {
+    font-size: 54px;
+    letter-spacing: -0.04em;
+    margin: 0 0 35px;
+}
+
+
+/* =========================
+   SELECTED VISUALS HEADER
+========================= */
+
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.work-intro {
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+
+
+/* =========================
+   LANDSCAPE SHOWREEL
+========================= */
+
+.landscape-section {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.landscape-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 18px 0 30px;
+}
+
+.landscape-header h2 {
+    font-size: clamp(42px, 6vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    margin: 0 0 18px;
+}
+
+.landscape-header p {
+    max-width: 560px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.landscape-carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.landscape-carousel {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.landscape-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.landscape-slide {
+    flex: 0 0 88%;
+    max-width: 1100px;
+    scroll-snap-align: start;
+}
+
+.landscape-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #080909;
+    border: 1px solid #242526;
+    overflow: hidden;
+}
+
+.landscape-video-frame video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.landscape-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 12px;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    font-size: 10px;
+    letter-spacing: 0.15em;
+}
+
+.video-play-button {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    background: rgba(0,0,0,.55);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+}
+
+.video-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.landscape-slide h3 {
+    font-size: 30px;
+    margin: 18px 0 6px;
+}
+
+.landscape-slide p {
+    margin: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .landscape-section {
+        padding-top: 20px;
+        padding-bottom: 70px;
+    }
+
+    .landscape-header {
+        display: block;
+    }
+
+    .landscape-header h2 {
+        font-size: 44px;
+    }
+
+    .landscape-slide {
+        flex: 0 0 94%;
+    }
+
+    .landscape-overlay {
+        top: 12px;
+        left: 12px;
+    }
+
+    .video-play-button {
+        width: 58px;
+        height: 58px;
+    }
+
+}
+
+
+
+
+
+/* =========================
+   FULLSCREEN VIDEO VIEWER
+========================= */
+
+.video-fullscreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.video-fullscreen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-fullscreen video {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.video-fullscreen-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(0,0,0,0.6);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.video-fullscreen-close:hover {
+    background: white;
+    color: black;
+}
+
+@media (max-width: 700px) {
+
+    .video-fullscreen {
+        padding: 10px;
+    }
+
+    .video-fullscreen video {
+        max-height: 100vh;
+    }
+
+    .video-fullscreen-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+
+
+
+.landscape-carousel {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.landscape-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.landscape-slide {
+    flex: 0 0 88%;
+    max-width: 1100px;
+    scroll-snap-align: start;
+}
+
+
+
+
+
+/* Large cinematic video frame */
+
+.landscape-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #080909;
+    border: 1px solid #242526;
+    overflow: hidden;
+}
+
+/* Video */
+
+.landscape-video-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Small label over video */
+
+.landscape-overlay {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .landscape-section {
+        padding-top: 20px;
+        padding-bottom: 70px;
+    }
+
+    .landscape-header {
+        display: block;
+    }
+
+    .landscape-header h2 {
+        font-size: 44px;
+    }
+
+    .landscape-video-frame {
+        aspect-ratio: 16 / 9;
+    }
+
+    .landscape-overlay {
+        top: 12px;
+        left: 12px;
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.project-slide {
+    flex: 0 0 360px;
+    background: #111314;
+    border: 1px solid #242526;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #080909;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 24px 26px 28px;
+}
+
+.project-info h3 {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    margin: 10px 0;
+}
+
+.project-info p {
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CAROUSEL CONTROLS
+========================= */
+
+.carousel-controls {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #333;
+    background: transparent;
+    color: #f3f1ec;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: #a7ff3f;
+    color: #0b0c0d;
+    border-color: #a7ff3f;
+}
+
+.carousel-btn:disabled {
+    cursor: default;
+    opacity: 0.35;
+}
+
+
+/* =========================
+   CAROUSEL FOOTER
+========================= */
+
+.carousel-footer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.carousel-counter {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    min-width: 55px;
+}
+
+.carousel-line {
+    height: 1px;
+    background: #292929;
+    flex: 1;
+    position: relative;
+}
+
+#carouselProgress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 16.66%;
+    background: #a7ff3f;
+    transition: width 0.3s ease;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #252525;
+}
+
+.service {
+    background: #0b0c0d;
+    padding: 30px;
+    min-height: 150px;
+}
+
+.service h3 {
+    font-size: 20px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-copy {
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 80px 0;
+}
+
+.big {
+    font-size: clamp(44px, 7vw, 90px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .wrap {
+        padding: 20px;
+    }
+
+    .nav {
+        align-items: flex-start;
+    }
+
+    .nav .muted {
+        font-size: 10px;
+        text-align: right;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 0;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section h2 {
+        font-size: 42px;
+    }
+
+    .work-header {
+        display: block;
+    }
+
+    .work-intro {
+        margin-top: 15px;
+    }
+
+    .carousel-controls {
+        margin-top: 25px;
+    }
+
+    .project-slide {
+        flex: 0 0 88%;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 26px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-footer {
+        margin-top: 20px;
+    }
+}
